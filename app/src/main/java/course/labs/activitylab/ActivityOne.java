@@ -55,8 +55,14 @@ public class ActivityOne extends Activity {
 			
 		//Log cat print out
 		Log.i(TAG, "onStart called");
+		onCreateTxt.setText(getResources().getString(R.string.onCreate) + createCount);
 		onStartTxt.setText(getResources().getString(R.string.onStart) + ++startCount);
-		//TODO:  update the appropriate count variable & update the view
+		onResumeTxt.setText(getResources().getString(R.string.onResume) + resumeCount);
+		onPauseTxt.setText(getResources().getString(R.string.onPause) + pauseCount);
+		onStopTxt.setText(getResources().getString(R.string.onStop) + stopCount);
+		onRestartTxt.setText(getResources().getString(R.string.onRestart) + restartCount);
+		onDestroyTxt.setText(getResources().getString(R.string.onDestroy) + destroyCount);
+        //TODO:  update the appropriate count variable & update the view
 	}
 
 	@Override
@@ -64,7 +70,13 @@ public class ActivityOne extends Activity {
 		super.onResume();
 
 		Log.i(TAG, "onResume called");
-		onResumeTxt.setText(getResources().getString(R.string.onResume) + ++resumeCount);
+        onCreateTxt.setText(getResources().getString(R.string.onCreate) + createCount);
+        onStartTxt.setText(getResources().getString(R.string.onStart) + startCount);
+        onResumeTxt.setText(getResources().getString(R.string.onResume) + ++resumeCount);
+        onPauseTxt.setText(getResources().getString(R.string.onPause) + pauseCount);
+        onStopTxt.setText(getResources().getString(R.string.onStop) + stopCount);
+        onRestartTxt.setText(getResources().getString(R.string.onRestart) + restartCount);
+        onDestroyTxt.setText(getResources().getString(R.string.onDestroy) + destroyCount);
 	}
 
 	@Override
