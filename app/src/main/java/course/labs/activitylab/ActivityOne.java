@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
+import android.content.SharedPreferences;
+
 
 public class ActivityOne extends Activity {
 
@@ -16,7 +18,7 @@ public class ActivityOne extends Activity {
             stopCount, restartCount, destroyCount;
     private TextView onCreateTxt, onStartTxt, onResumeTxt,
             onPauseTxt, onStopTxt, onRestartTxt, onDestroyTxt;
-
+    private SharedPreferences prefs;
 	// lifecycle counts
 	//TODO: Create 7 counter variables, each corresponding to a different one of the lifecycle callback methods.
 	//TODO:  increment the variables' values when their corresponding lifecycle methods get called.
@@ -26,6 +28,7 @@ public class ActivityOne extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_one);
 		viewInitialization();
+        loadCounterFromDisk();
 
 		//Log cat print out
 		Log.i(TAG, "onCreate called");
@@ -94,6 +97,7 @@ public class ActivityOne extends Activity {
 
 		Log.i(TAG, "onStop called");
 		onStopTxt.setText(getResources().getString(R.string.onStop) + ++stopCount);
+        saveCounterToDisk();
 	}
 
 	@Override
@@ -148,6 +152,35 @@ public class ActivityOne extends Activity {
 		}
 
 
+
+    public void saveCounterToDisk() {
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.putInt(getString(R.string.onCreate), createCount);
+        editor.putInt(getString(R.string.onStart), startCount);
+        editor.putInt(getString(R.string.onResume), resumeCount);
+        editor.putInt(getString(R.string.onPause), pauseCount);
+        editor.putInt(getString(R.string.onStop), stopCount);
+        editor.putInt(getString(R.string.onRestart), restartCount);
+        editor.putInt(getString(R.string.onDestroy), destroyCount);
+
+        editor.commit();
+
+    }
+
+
+    public void loadCounterFromDisk() {
+        createCount = prefs.getInt(getString(R.string.onCreate), 0);
+        startCount = prefs.getInt(getString(R.string.onStart), 0);
+        resumeCount = prefs.getInt(getString(R.string.onResume), 0);
+        pauseCount = prefs.getInt(getString(R.string.onPause), 0);
+        stopCount = prefs.getInt(getString(R.string.onStop), 0);
+        restartCount = prefs.getInt(getString(R.string.onRestart), 0);
+        destroyCount = prefs.getInt(getString(R.string.onDestroy), 0);
+
+
+    }
+
     private void viewInitialization(){
         onCreateTxt = (TextView) findViewById(R.id.create);
         onStartTxt = (TextView) findViewById(R.id.start);
@@ -156,5 +189,9 @@ public class ActivityOne extends Activity {
         onStopTxt = (TextView) findViewById(R.id.stop);
         onRestartTxt = (TextView) findViewById(R.id.restart);
         onDestroyTxt = (TextView) findViewById(R.id.destroy);
+
+        // no editor needed we're reading values
+        prefs = getPreferences(MODE_PRIVATE);
+
     }
 }
