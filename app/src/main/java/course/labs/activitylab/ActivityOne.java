@@ -34,13 +34,8 @@ public class ActivityOne extends Activity {
 		Log.i(TAG, "onCreate called");
 		//String test = getResources().getString(R.string.onCreate);
 		//TODO: update the appropriate count variable & update the view
-		onCreateTxt.setText(getResources().getString(R.string.onCreate) + ++createCount);
-		onStartTxt.setText(getResources().getString(R.string.onStart) + startCount);
-		onResumeTxt.setText(getResources().getString(R.string.onResume) + resumeCount);
-		onPauseTxt.setText(getResources().getString(R.string.onPause) + pauseCount);
-		onStopTxt.setText(getResources().getString(R.string.onStop) + stopCount);
-		onRestartTxt.setText(getResources().getString(R.string.onRestart) + restartCount);
-		onDestroyTxt.setText(getResources().getString(R.string.onDestroy) + destroyCount);
+		createCount++;
+        updateCounterUI();
 	}
 
 	@Override
@@ -58,13 +53,8 @@ public class ActivityOne extends Activity {
 			
 		//Log cat print out
 		Log.i(TAG, "onStart called");
-		onCreateTxt.setText(getResources().getString(R.string.onCreate) + createCount);
-		onStartTxt.setText(getResources().getString(R.string.onStart) + ++startCount);
-		onResumeTxt.setText(getResources().getString(R.string.onResume) + resumeCount);
-		onPauseTxt.setText(getResources().getString(R.string.onPause) + pauseCount);
-		onStopTxt.setText(getResources().getString(R.string.onStop) + stopCount);
-		onRestartTxt.setText(getResources().getString(R.string.onRestart) + restartCount);
-		onDestroyTxt.setText(getResources().getString(R.string.onDestroy) + destroyCount);
+        startCount++;
+        updateCounterUI();
         //TODO:  update the appropriate count variable & update the view
 	}
 
@@ -73,13 +63,8 @@ public class ActivityOne extends Activity {
 		super.onResume();
 
 		Log.i(TAG, "onResume called");
-        onCreateTxt.setText(getResources().getString(R.string.onCreate) + createCount);
-        onStartTxt.setText(getResources().getString(R.string.onStart) + startCount);
-        onResumeTxt.setText(getResources().getString(R.string.onResume) + ++resumeCount);
-        onPauseTxt.setText(getResources().getString(R.string.onPause) + pauseCount);
-        onStopTxt.setText(getResources().getString(R.string.onStop) + stopCount);
-        onRestartTxt.setText(getResources().getString(R.string.onRestart) + restartCount);
-        onDestroyTxt.setText(getResources().getString(R.string.onDestroy) + destroyCount);
+        resumeCount++;
+        updateCounterUI();
 	}
 
 	@Override
@@ -151,7 +136,15 @@ public class ActivityOne extends Activity {
 			startActivity(new Intent(this, ActivityTwo.class));
 		}
 
-
+    public void updateCounterUI() {
+        onCreateTxt.setText(getResources().getString(R.string.onCreate) + createCount);
+        onStartTxt.setText(getResources().getString(R.string.onStart) + startCount);
+        onResumeTxt.setText(getResources().getString(R.string.onResume) + resumeCount);
+        onPauseTxt.setText(getResources().getString(R.string.onPause) + pauseCount);
+        onStopTxt.setText(getResources().getString(R.string.onStop) + stopCount);
+        onRestartTxt.setText(getResources().getString(R.string.onRestart) + restartCount);
+        onDestroyTxt.setText(getResources().getString(R.string.onDestroy) + destroyCount);
+    }
 
     public void saveCounterToDisk() {
         SharedPreferences.Editor editor = prefs.edit();
