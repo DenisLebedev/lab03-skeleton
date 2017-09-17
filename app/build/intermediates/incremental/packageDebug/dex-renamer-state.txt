@@ -1,7 +1,7 @@
-#Thu Sep 07 22:49:44 EDT 2017
-base.0=C\:\\Users\\owner\\gitstuff\\lab03-skeleton\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_e09d1c7e5733dc9020f45c8ba45f6d0fd02e83e6
+#Sun Sep 17 14:17:28 EDT 2017
+base.0=D\:\\android\\fork\\lab03-skeleton\\lab03-skeleton\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_ff0b6d939d392b0a79162a958d0a4302ab0def37
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=C\:\\Users\\owner\\gitstuff\\lab03-skeleton\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_76cb5f5453e07d1281892a1d9ff5b46270c365d4\\classes.dex
-base.1=C\:\\Users\\owner\\gitstuff\\lab03-skeleton\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_76cb5f5453e07d1281892a1d9ff5b46270c365d4
-file.0=C\:\\Users\\owner\\gitstuff\\lab03-skeleton\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_e09d1c7e5733dc9020f45c8ba45f6d0fd02e83e6\\classes.dex
+file.1=D\:\\android\\fork\\lab03-skeleton\\lab03-skeleton\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_70e82a268aebb3f31bfb9ee1345a3d3fa33f04e9\\classes.dex
+base.1=D\:\\android\\fork\\lab03-skeleton\\lab03-skeleton\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_70e82a268aebb3f31bfb9ee1345a3d3fa33f04e9
+file.0=D\:\\android\\fork\\lab03-skeleton\\lab03-skeleton\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_ff0b6d939d392b0a79162a958d0a4302ab0def37\\classes.dex
