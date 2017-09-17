@@ -101,10 +101,34 @@ public class ActivityOne extends Activity {
 	}
 
 
-		@Override
-		public void onSaveInstanceState(Bundle savedInstanceState){
-			//TODO:  save state information with a collection of key-value pairs & save all  count variables
-		}
+	@Override
+	protected void onSaveInstanceState(Bundle savedInstanceState){
+		//TODO:  save state information with a collection
+		// of key-value pairs & save all  count variables
+
+		super.onSaveInstanceState(savedInstanceState);
+		savedInstanceState.putInt("create", createCount);
+		savedInstanceState.putInt("start", startCount);
+		savedInstanceState.putInt("resume", resumeCount);
+		savedInstanceState.putInt("pause", pauseCount);
+		savedInstanceState.putInt("stop", stopCount);
+		savedInstanceState.putInt("restart", restartCount);
+		savedInstanceState.putInt("destroy", destroyCount);
+
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle inState) {
+		super.onRestoreInstanceState(inState);
+
+		createCount = inState.getInt("create");
+		startCount = inState.getInt("start");
+		resumeCount = inState.getInt("resume");
+		pauseCount = inState.getInt("pause");
+		stopCount = inState.getInt("stop");
+		restartCount = inState.getInt("restart");
+		destroyCount = inState.getInt("destroy");
+	}
 
 
     public void launchActivityTwo(View view) {
